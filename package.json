@@ -1,0 +1,30 @@
+{
+  "name": "boira_app",
+  "version": "1.0.0",
+  "description": "Boira website",
+  "main": "app.js",
+  "scripts": {
+    "build:scss": "node-sass client/sass/main.scss client/css/main.css",
+    "build:scss:watch": "node-sass client/sass/main.scss client/css/main.css --watch",
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amallen22/boira.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amallen22/boira/issues"
+  },
+  "homepage": "https://github.com/amallen22/boira#readme",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "node-sass": "^4.5.3"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "path": "^0.12.7"
+  }
+}

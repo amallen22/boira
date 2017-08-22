@@ -1,0 +1,22 @@
+{
+  "name": "boira_app",
+  "description": "Boira website",
+  "main": "app.js",
+  "authors": [
+    "Alex Mallen <alex.mallengines@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/amallen22/boira",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "normalize-css": "normalize.css#^7.0.0"
+  }
+}
