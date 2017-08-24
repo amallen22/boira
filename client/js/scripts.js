@@ -1,8 +1,8 @@
-/* $ global */
-console.log('Hi from scripts')
+  console.log('Hi from scripts')
+/* global $ */
+  $(document).ready(function () {
+    console.log('Hi from scripts')
 
-// $(document).ready(function () {
-//   audiojs.events.ready(function () {
-//     var as = audiojs.createAll()
-//   })
-// })
+    const hScreen = $(window).height()
+    console.log(hScreen)
+  })
