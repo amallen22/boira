@@ -22,6 +22,10 @@
 					<h4>Si de la runa neixés</h4>
 					<div class="row">
 						<div class="col-md-6">
+							<h5><span>2. </span>Glasgow</h5>
+							<audio src="mp3/war-low_rider.mp3" preload="auto" />
+						</div>
+						<div class="col-md-6">
 							<ul>
 								<li>1. <a href="#">El que escolten els arbres <span>09:39</span></a></li>
 								<li>2. <a href="#">Glasgow <span>05:39</span></a></li>
@@ -29,10 +33,6 @@
 								<li>4. <a href="#">Allau <span>09:52</span></a></li>
 								<li>5. <a href="#">Refugi <span>10:13</span></a></li>
 							</ul>		
-						</div>
-						<div class="col-md-6">
-							<h5><span>2. </span>Glasgow</h5>
-							<audio></audio>
 						</div>
 					</div>
 
@@ -121,5 +121,11 @@
 	<script type="text/script" src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/script" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/script" src="js/scripts.js"></script>
+	<script src="js/audiojs/audio.min.js"></script>
+	<script>
+      audiojs.events.ready(function() {
+        audiojs.createAll();
+      });
+    </script>
 </body>
 </html>

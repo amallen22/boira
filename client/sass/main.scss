@@ -1,5 +1,11 @@
-$brand_c: #ccc;
+$brand: #d0c38e;
+$brand_bg: #161815;
+$black: #030c07;
+$dark_grey: #333333;
+$light_grey: #dadad8;
 
 body {
-	background: $brand_c;
+	background: $brand_bg;
+	color: $brand;
+	font-size: 16px;
 }
