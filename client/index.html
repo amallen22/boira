@@ -23,7 +23,7 @@
 	            </div>
             </div>
         </div>
-        <nav class="menu">
+        <nav class="h_menu">
         	<img src="images/boira_gold.png" />
             <ul>
                 <li><a href="#">Releases</a></li>
@@ -145,8 +145,14 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-xs-12 col-sm-12 col-sm-6">
-                <p>googlemaps</p>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <iframe
+                  width="100%"
+                  height="450"
+                  frameborder="0" style="border:0"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDCQxedbicT6PlFst0lH4pl3Q3MgwvLIR4
+                    &q=Space+Needle,Seattle+WA" allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
@@ -232,119 +238,26 @@
     </section>
     <footer>
     </footer>
-    <script type="text/script" src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- <script type="text/script" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
-    <script type="text/script" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/script" src="js/scripts.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     
     <!-- animated pieces -->
     <script src="js/animatedPieces/imagesloaded.pkgd.min.js"></script>
-	<script src="js/animatedPieces/anime.min.js"></script>
-	<script src="js/animatedPieces/main.js"></script>
-	
+    <script src="js/animatedPieces/anime.min.js"></script>
+    <script src="js/animatedPieces/main.js"></script>
+    <script src="js/animatedPiecesCall.js"></script>
+
+    
     <!-- audio js -->
     <script src="js/audiojs/audio.min.js"></script>
+    <script src="js/audioJsCall.js"></script>
 
+    <!-- sticky header -->
+    <script src="js/stickyHeaderCall.js"></script>
     
-    <script>
-    // audio 
-	    audiojs.events.ready(function() {
-	        audiojs.createAll();
-	    });
-    </script>
-    
-    <script>
-    // images Pieces
-		{
-			imagesLoaded(document.body, { background: true }, () => document.body.classList.remove('loading'));
-			
-			const menuItems = Array.from(document.querySelectorAll('.menu > .menu__item'));
-			
-			const piecesObj = new Pieces(document.querySelector('.slideshow > .pieces'), {
-				pieces: {rows: 14, columns: 12},
-				delay: [0,40],
-				hasTilt: true,
-				tilt: {
-					maxRotationX: -1, 
-					maxRotationY: -1, 
-					maxTranslationX: -5, 
-					maxTranslationY: -2
-				}
-			});
-			
-			let isAnimating = false;
-			let current = 0;
-
-			const openImage = (ev, item, pos) => {
-				ev.preventDefault();
-				if ( isAnimating || current === pos ) {
-					return false;
-				}
-				isAnimating = true;
-				menuItems[current].classList.remove('menu__item--current');
-				current = pos;
-				menuItems[current].classList.add('menu__item--current');
-				const imgsrc = item.dataset.image;
-
-				piecesObj.animate({
-					duration: 200,
-					easing: 'easeOutQuad',
-					delay: (t,i,l) => {
-						return parseInt(t.dataset.row) * parseInt(t.dataset.delay);
-					},
-					translateX: (t,i) => {
-						return anime.random(-50,50)+'px';
-					},
-					translateY: (t,i) => { 
-						return anime.random(-800,-200)+'px';
-					},
-					rotateZ: (t,i) => { 
-						return anime.random(-45,45)+'deg';
-					},
-					opacity: 0,
-					complete: () => {
-						piecesObj.setImage(imgsrc);
-
-						piecesObj.animate({
-							duration: 500,
-							easing: [0.3,1,0.3,1],
-							delay: (t,i,l) => {
-								return parseInt(t.dataset.row) * parseInt(t.dataset.delay);
-							},
-							translateX: 0,
-							translateY: () => {
-								return [anime.random(200,800)+'px','0px'];
-							},
-							rotateZ: 0,
-							opacity: {
-								value: 1,
-								duration: 500,
-								easing: 'linear'
-							},
-							complete: () => {
-								isAnimating = false;
-							}
-						});
-					}
-				});
-			};
-
-			menuItems.forEach((item,pos) => item.addEventListener('click', (ev) => openImage(ev,item,pos)));
-		}
-		</script>
-		<script>
-    	// sticky header
-    	$(document).ready(function(){
-	    	$(window).scroll(function() {    // this will work when your window scrolled.
-				var height = $(window).scrollTop();  //getting the scrolling height of window
-				if(height  > 678) {
-					$(".menu").css({"position": "fixed"});
-				} else{
-					$(".menu").css({"position": "relative"});
-				}
-			});
-	    });
-    </script>
+    <!-- My javascript -->
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
