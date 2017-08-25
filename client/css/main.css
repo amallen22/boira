@@ -209,7 +209,7 @@ nav {
         #releases .playlist .list li:hover a:last-child {
           display: block; }
   #releases .cover {
-    background-color: #dadad8;
+    background-color: #ced0cd;
     text-align: center; }
     #releases .cover .btn {
       margin: 15px auto; }
