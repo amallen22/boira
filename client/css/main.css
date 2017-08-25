@@ -4,13 +4,13 @@
 .light, h1, h2, h3, #releases h4, #events .list li .date .day, .item .detail .price {
   font-weight: 300; }
 
-.regular, .wellcome .bg-home > div h2, #releases .player .audiojs {
+.regular, .wellcome .bg-home > div h2, #releases .player .audiojs, #artists .perfil h4 {
   font-weight: 400; }
 
 .bold, .btn.btn-default {
   font-weight: 700; }
 
-.uppercase, h1, h2, nav ul li a, .list li a:last-child, #releases .playlist .list li a:last-child, #events .list li .date .month_year, #events .list li .place, .item .detail h4, .item .detail .zoom, .item .detail .category {
+.uppercase, h1, h2, nav ul li a, .list li a:last-child, #releases .playlist .list li a:last-child, #events .list li .date .month_year, #events .list li .place, #artists .perfil h4, .item .detail h4, .item .detail .zoom, .item .detail .category {
   text-transform: uppercase; }
 
 .lowercase {
@@ -20,10 +20,10 @@
 .black, h1, h2 {
   color: #030c07; }
 
-.gold, #events .list li .date .day, .item .detail h4, .item .detail .zoom .icon-z, .btn.btn-default.gold {
+.gold, #events .list li .date .day, #artists .perfil h4, .item .detail h4, .item .detail .zoom .icon-z, .btn.btn-default.gold {
   color: #d0c38e; }
 
-.l-grey, #releases h4, #releases .playlist .list li a:first-child:hover, #events .list li .date .month_year, #events .list li .date .month_year span:first-child, #events .list li .place, .item .detail p, .item .detail .category, .item .detail .description, .item .detail .price {
+.l-grey, #releases h4, #releases .playlist .list li a:first-child:hover, #events .list li .date .month_year, #events .list li .date .month_year span:first-child, #events .list li .place, #artists .perfil p, .item .detail p, .item .detail .category, .item .detail .description, .item .detail .price {
   color: #dadad8; }
 
 .d-grey {
@@ -249,6 +249,14 @@ nav {
   background-color: #111310; }
 
 /* Artist */
+#artists {
+  background: url("../images/artists/clara.jpg") no-repeat top center;
+  background-size: cover;
+  min-height: 768px; }
+  #artists .perfil h4 {
+    margin-bottom: 15px;
+    font-size: 1.8em; }
+
 /* store */
 .item {
   position: relative; }
@@ -319,7 +327,7 @@ nav {
   padding: 15px 30px;
   text-transform: uppercase;
   transition: all .3s ease-in-out; }
-  #events .list li .date .btn.btn-default.day, .item .detail h4.btn.btn-default, .item .detail .zoom .btn.btn-default.icon-z, .btn.btn-default.gold {
+  #events .list li .date .btn.btn-default.day, #artists .perfil h4.btn.btn-default, .item .detail h4.btn.btn-default, .item .detail .zoom .btn.btn-default.icon-z, .btn.btn-default.gold {
     border-color: #d0c38e; }
   .btn.btn-default:hover {
     box-shadow: 0px 2px 4px black; }
