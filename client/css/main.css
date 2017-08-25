@@ -1,10 +1,10 @@
 /* @extends */
 /* font */
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700");
-.light, h1, h2, h3, #releases h4, #events .list li .date .day {
+.light, h1, h2, h3, #releases h4, #events .list li .date .day, .item .detail .price {
   font-weight: 300; }
 
-.regular, #releases .player .audiojs {
+.regular, .bg-home > div h2, #releases .player .audiojs {
   font-weight: 400; }
 
 .bold, .btn.btn-default {
@@ -20,10 +20,10 @@
 .black, h1, h2 {
   color: #030c07; }
 
-.gold, #events .list li .date .day, .item .detail h4, .btn.btn-default.gold {
+.gold, #events .list li .date .day, .item .detail h4, .item .detail .zoom .icon-z, .btn.btn-default.gold {
   color: #d0c38e; }
 
-.l-grey, #releases h4, #releases .playlist .list li a:first-child:hover, #events .list li .date .month_year, #events .list li .date .month_year span:first-child, #events .list li .place, .item .detail span, .item .detail .category, .item .detail .description, .item .detail .price {
+.l-grey, #releases h4, #releases .playlist .list li a:first-child:hover, #events .list li .date .month_year, #events .list li .date .month_year span:first-child, #events .list li .place, .item .detail p, .item .detail .category, .item .detail .description, .item .detail .price {
   color: #dadad8; }
 
 .d-grey {
@@ -69,7 +69,18 @@ a {
 /* Wellcome */
 .bg-home {
   background: url("../images/bg_home.jpg") center center no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  min-height: 678px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .bg-home > div {
+    margin-top: -60px;
+    text-align: center; }
+    .bg-home > div h1 {
+      letter-spacing: 10.5px; }
+    .bg-home > div .btn {
+      margin-top: 30px; }
 
 /* Navbar */
 nav {
@@ -103,7 +114,8 @@ nav {
 
 /* Releases */
 #releases h4 {
-  font-size: 1.8em; }
+  font-size: 1.8em;
+  margin-bottom: 15px; }
 
 #releases .player h5 {
   font-size: 1.3em;
@@ -224,10 +236,8 @@ nav {
 /* store */
 .item {
   position: relative; }
-  .item:hover .detail {
-    opacity: 1; }
   .item .detail {
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     top: 15px;
     left: 15px;
@@ -236,26 +246,62 @@ nav {
     padding: 15px;
     text-align: center;
     background-color: rgba(22, 24, 21, 0.8);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     transition: all .3s ease-in-out; }
     .item .detail h4 {
       font-size: 1.4em;
       margin-bottom: 0.4em;
       margin-top: 15px; }
     .item .detail .zoom {
-      margin: 45px 0 60px; }
+      display: inline-block;
+      margin: 15% 0; }
+      .item .detail .zoom .icon-z {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid #d0c38e;
+        font-size: 2em;
+        padding: 5px 0px 0 2px;
+        font-style: normal;
+        font-weight: 300;
+        display: inline-block;
+        text-align: center; }
+      .item .detail .zoom small {
+        display: block;
+        margin-top: 7.5px; }
+      .item .detail .zoom:hover {
+        color: #d0c38e;
+        border-bottom: 1px solid #d0c38e;
+        text-decoration: none; }
     .item .detail .price {
-      font-size: 1.8em; }
+      font-size: 1.8em;
+      margin: 5% 0 2%; }
+
+/* Gallery */
+#gallery .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  #gallery .container div {
+    width: 25%;
+    margin-bottom: 7.5px; }
 
 /* buttons bootstrap costumized */
 .btn.btn-default {
+  color: #030c07;
   border-radius: 2px;
   background-color: transparent;
   border: 2px solid #030c07;
   line-height: 80%;
   padding: 15px 30px;
-  text-transform: uppercase; }
-  #events .list li .date .btn.btn-default.day, .item .detail h4.btn.btn-default, .btn.btn-default.gold {
+  text-transform: uppercase;
+  transition: all .3s ease-in-out; }
+  #events .list li .date .btn.btn-default.day, .item .detail h4.btn.btn-default, .item .detail .zoom .btn.btn-default.icon-z, .btn.btn-default.gold {
     border-color: #d0c38e; }
+  .btn.btn-default:hover {
+    box-shadow: 0px 2px 4px black; }
 
 /* carrousel bootstrap costumized */
 .carousel-caption {

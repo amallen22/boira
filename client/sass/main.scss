@@ -93,6 +93,25 @@ a {
 	.bg-home {
 		background: url('../images/bg_home.jpg') center center no-repeat;
 		background-size: cover;
+		min-height: 678px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		> div {
+		    margin-top: - $gutter * 4;
+			text-align: center;
+			h1 {
+			    letter-spacing: 10.5px;
+			}
+			h2 {
+				@extend .regular;
+			}
+			.btn {
+				margin-top: $gutter * 2;
+			}
+		}
+
 	}
 
 /* Navbar */
@@ -151,6 +170,7 @@ nav {
 		@extend .l-grey;
 		@extend .light;
 		font-size: 1.8em;
+		margin-bottom: $gutter;
 	}
 	.player {
 		h5 {
@@ -338,11 +358,11 @@ nav {
 	position: relative;
 	&:hover {
 		.detail {
-			opacity: 1;
+			//opacity: 1;
 		}
 	}
 	.detail {
-		opacity: 0;
+		opacity: 1;
 		position: absolute;
 	    top: $gutter;
 	    left: $gutter;
@@ -351,6 +371,9 @@ nav {
 	    padding: $gutter;
 		text-align: center;
 		background-color: rgba(22, 24, 21, 0.8);
+	    display: flex;
+		align-items: center;
+    	flex-direction: column;
 		transition: all .3s ease-in-out;
 
 		h4 {
@@ -360,12 +383,36 @@ nav {
 			margin-bottom: 0.4em;
 			margin-top: $gutter;
 		}
-		span {
+		p {
 			@extend .l-grey;
 		}
 		.zoom {
+			display: inline-block;
 			@extend .uppercase;
-			margin: $gutter * 3 0 $gutter * 4; 
+		    margin: 15% 0; 
+			
+			.icon-z {
+				@extend .gold;
+		   	 	width: $gutter * 4;
+		    	height: $gutter * 4;
+			    border-radius: 50%;
+			    border: 2px solid #d0c38e;
+			    font-size: 2em;
+			    padding: 5px 0px 0 2px;
+			    font-style: normal;
+			    font-weight: 300;
+			    display: inline-block;
+			    text-align: center;
+			}
+			small {
+				display: block;
+				margin-top: $gutter / 2;
+			}
+			&:hover {
+				color: $brand;
+				border-bottom: 1px solid $brand;
+				text-decoration: none;
+			}
 		}
 		.category {
 			@extend .uppercase;
@@ -376,25 +423,44 @@ nav {
 		}
 		.price {
 			@extend .l-grey;
+			@extend .light;
 			font-size: 1.8em;
+			margin: 5% 0 2%;;
 		}
 	}
 }
 
+/* Gallery */
+#gallery .container { 
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	div {
+	    width: 25%;
+    	margin-bottom: $gutter / 2;	
+	}
+}
 
 /* buttons bootstrap costumized */
 	.btn.btn-default {
 		@extend .bold;
+		color: $black;
 		border-radius: 2px;
 		background-color: transparent;
 		border: 2px solid $black;
 		line-height: 80%;
 		padding: $gutter $gutter * 2;
 		text-transform: uppercase;
+		transition: all .3s ease-in-out;
 
 		&.gold {
 			@extend .gold;
 			border-color: $brand;
+		}
+
+		&:hover {
+			box-shadow: 0px 2px 4px rgba(0,0,0, 1);
 		}
 	}
 
