@@ -87,9 +87,18 @@ a {
 	color: $brand;
 	display: block;
 }
+section {
+    padding: $gutter * 2 0;
+}
 
 /* Wellcome */
 
+.wellcome {
+	img {
+		position: absolute;
+		top: $gutter * 4;
+		right: $gutter * 4;
+	}
 	.bg-home {
 		background: url('../images/bg_home.jpg') center center no-repeat;
 		background-size: cover;
@@ -111,13 +120,17 @@ a {
 				margin-top: $gutter * 2;
 			}
 		}
-
 	}
+}
 
 /* Navbar */
 
 nav {
 	background-color: $black;
+	padding: $gutter / 2;
+	img {
+		float: left;
+	}
 	ul {
 		padding: 0;
 		margin: 0;
@@ -166,6 +179,8 @@ nav {
 
 /* Releases */
 #releases{
+	background-color: $black;
+	margin-top: 4px; 
 	h4 {
 		@extend .l-grey;
 		@extend .light;
@@ -199,7 +214,7 @@ nav {
 					// height: ($gutter * 4) - 10px;
 					padding: $gutter * 2;
 					background-color: $dark_grey;
-					background-position: center center;
+					background-position: center 17px;
 				}
 			}
 			.scrubber {
@@ -353,9 +368,16 @@ nav {
 	}
 }
 
+/* Artist */
+#artist {
+} 
+
 /* store */
 .item {
 	position: relative;
+	img {
+		width: 100%;
+	}
 	&:hover {
 		.detail {
 			//opacity: 1;
@@ -437,8 +459,9 @@ nav {
 	justify-content: space-between;
 
 	div {
-	    width: 25%;
-    	margin-bottom: $gutter / 2;	
+	    width: 49%;
+    	margin-bottom: $gutter / 2;
+    	margin-right: 1%;
 	}
 }
 
@@ -486,5 +509,14 @@ nav {
 			padding: $gutter * 1 $gutter * 2;
 		}
 	    padding: $gutter * 1 $gutter * 2;
+	}
+
+	/* gallery */
+	#gallery .container { 
+
+		div {
+		    width: 24%;
+	    	margin-right: 1%;
+		}
 	}
 }

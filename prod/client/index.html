@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/animatedPieces/demo-switch.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
 <body>
     <header>
         <div class="wellcome active">
+        	<img src="images/boira_black.png" />
 			<div class="bg-home">
 	            <div>
 	                <h1>BÖIRA</h1>
@@ -21,7 +23,8 @@
 	            </div>
             </div>
         </div>
-        <nav>
+        <nav class="menu">
+        	<img src="images/boira_gold.png" />
             <ul>
                 <li><a href="#">Releases</a></li>
                 <li><a href="#">Events</a></li>
@@ -149,15 +152,30 @@
     </section>
     <section id="artists">
         <h3>Artists</h3>
-        <div class="container">
-            <div class="row">
+        	<div class="content">
+				<div class="slideshow">
+					<div id="slide-1" class="slide" style="background-image: url(images/artists/clara.jpg)"></div>
+					<div id="slide-2" class="slide" style="background-image: url(images/artists/guillem.jpg)"></div>
+					<div id="slide-3" class="slide" style="background-image: url(images/artists/aleix.jpg)"></div>
+					<div id="slide-4" class="slide" style="background-image: url(images/artists/marc.jpg)"></div>
+					<div id="slide-5" class="slide" style="background-image: url(images/artists/llubet.jpg)"></div>
+					<div class="pieces" style="background-image: url(images/artists/group.jpg)"></div>
+				</div>
+				<nav class="menu">
+					<a class="menu__item menu__item--current" href="#slide-1" data-image="images/artists/clara.jpg">Clara Aguilar <span>Keys/Piano</a>
+					<a class="menu__item" href="#slide-2" data-image="images/artists/guillem.jpg">Guillem Alberich  <span>Guitar</span></a>
+					<a class="menu__item" href="#slide-3" data-image="images/artists/aleix.jpg">Aleix Archs <span>Guitar</span></a>
+					<a class="menu__item" href="#slide-4" data-image="images/artists/marc.jpg">Marc Rios <span>Bass</span></a>
+					<a class="menu__item" href="#slide-5" data-image="images/artists/llubet.jpg">Llobet <span>Drums</span></a>
+				</nav>
+			</div>
+            <!-- <div class="row">
                 <div class="col-sm-6"><img src="#" alt=""></div>
                 <div class="col-sm-6">
                     <h4>Clara Aguilar</h4>
                     <p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo lectus, egestas elementum nisl ut, mattis tempus urna. Duis sed urna blandit, efficitur lacus eu, fringilla elit. Nam sit amet lacinia sem, nec imperdiet nisl. Integer mattis est eget enim pretium, nec vehicula erat convallis. Duis gravida odio non sapien finibus tincidunt non a erat.</p>
                 </div>
-            </div>
-        </div>
+            </div> -->
     </section>
     <section id="store">
         <h3>Store</h3>
@@ -214,16 +232,119 @@
     </section>
     <footer>
     </footer>
-    <!-- <script type="text/script" src="bower_components/jquery/dist/jquery.min.js"></script> -->
-    <script type="text/script" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/script" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- <script type="text/script" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
     <script type="text/script" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/script" src="js/scripts.js"></script>
+    
+    <!-- animated pieces -->
+    <script src="js/animatedPieces/imagesloaded.pkgd.min.js"></script>
+	<script src="js/animatedPieces/anime.min.js"></script>
+	<script src="js/animatedPieces/main.js"></script>
+	
+    <!-- audio js -->
     <script src="js/audiojs/audio.min.js"></script>
+
+    
     <script>
+    // audio 
 	    audiojs.events.ready(function() {
 	        audiojs.createAll();
 	    });
     </script>
-    <script type="text/script" src="js/scripts.js"></script>
+    
+    <script>
+    // images Pieces
+		{
+			imagesLoaded(document.body, { background: true }, () => document.body.classList.remove('loading'));
+			
+			const menuItems = Array.from(document.querySelectorAll('.menu > .menu__item'));
+			
+			const piecesObj = new Pieces(document.querySelector('.slideshow > .pieces'), {
+				pieces: {rows: 14, columns: 12},
+				delay: [0,40],
+				hasTilt: true,
+				tilt: {
+					maxRotationX: -1, 
+					maxRotationY: -1, 
+					maxTranslationX: -5, 
+					maxTranslationY: -2
+				}
+			});
+			
+			let isAnimating = false;
+			let current = 0;
+
+			const openImage = (ev, item, pos) => {
+				ev.preventDefault();
+				if ( isAnimating || current === pos ) {
+					return false;
+				}
+				isAnimating = true;
+				menuItems[current].classList.remove('menu__item--current');
+				current = pos;
+				menuItems[current].classList.add('menu__item--current');
+				const imgsrc = item.dataset.image;
+
+				piecesObj.animate({
+					duration: 200,
+					easing: 'easeOutQuad',
+					delay: (t,i,l) => {
+						return parseInt(t.dataset.row) * parseInt(t.dataset.delay);
+					},
+					translateX: (t,i) => {
+						return anime.random(-50,50)+'px';
+					},
+					translateY: (t,i) => { 
+						return anime.random(-800,-200)+'px';
+					},
+					rotateZ: (t,i) => { 
+						return anime.random(-45,45)+'deg';
+					},
+					opacity: 0,
+					complete: () => {
+						piecesObj.setImage(imgsrc);
+
+						piecesObj.animate({
+							duration: 500,
+							easing: [0.3,1,0.3,1],
+							delay: (t,i,l) => {
+								return parseInt(t.dataset.row) * parseInt(t.dataset.delay);
+							},
+							translateX: 0,
+							translateY: () => {
+								return [anime.random(200,800)+'px','0px'];
+							},
+							rotateZ: 0,
+							opacity: {
+								value: 1,
+								duration: 500,
+								easing: 'linear'
+							},
+							complete: () => {
+								isAnimating = false;
+							}
+						});
+					}
+				});
+			};
+
+			menuItems.forEach((item,pos) => item.addEventListener('click', (ev) => openImage(ev,item,pos)));
+		}
+		</script>
+		<script>
+    	// sticky header
+    	$(document).ready(function(){
+	    	$(window).scroll(function() {    // this will work when your window scrolled.
+				var height = $(window).scrollTop();  //getting the scrolling height of window
+				if(height  > 678) {
+					$(".menu").css({"position": "fixed"});
+				} else{
+					$(".menu").css({"position": "relative"});
+				}
+			});
+	    });
+    </script>
 </body>
 
 </html>
