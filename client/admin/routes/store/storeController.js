@@ -4,8 +4,10 @@ angular.module('boiraApp')
   $scope.section = 'STORE'
   localData.storeData()
   .then(function (response) {
-  	$scope.products = response.data.products
-  	console.log(response.data.products)
+    console.log(response.data.products)
+    $scope.products = response.data.products
+
+    $scope.btnCategories = ['T-shirts', 'Bags', 'Music']
   })
   // $scope.localData = localData
 })

@@ -1,16 +1,23 @@
 <div class="col-md-4">
     <h1>{{ section }}</h1>
-    <ul>
-        <li><button ng-click="showTshirts()">tshirts</button></li>
-        <li><button ng-click="showBags()">bags</button></li>
-    </ul>
     <h2>Add, edit and remove items from your store</h2>
     <a class="btn btn-default" href="#">New item</a>
+    <hr>
+    <p>Filter the product by:</p>
+    <button 
+        type="button" 
+        ng-repeat="title in titles" 
+        class="btn btn-default" 
+        ng-model="selected[title]" 
+        btn-checkbox 
+        ng-class="{active: title == selectedTitle}" 
+        ng-click="setSelectedTitle(title)">{{title}}
+    </button>
 </div>
 <div class="col-md-8">
     <h3>T-shirts</h3>
     <div class="row">
-        <div class="col-xs-12 col-sm-6" ng-repeat="product in products | filter: produ">
+        <div class="col-xs-12 col-sm-6" ng-repeat="product in products | filter:byCategory">
             <div class="item">
                 <img ng-src="{{ product.url }}" alt="" />
                 <div class="detail">
