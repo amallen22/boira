@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="boiraApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Böira post rock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../bower_components/normalize-css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/animatedPieces/demo-switch.css" /> -->
+    <link rel="stylesheet" type="text/css" href="../css/main.css" /> 
+</head>
+
+<body>
+    <aside>
+        <nav class="h_menu">
+        	<img src="../images/boira_gold.png" />
+            <ul>
+                <li><a href="#">STORE</a></li>
+                <li><a href="#">EVENTS</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <section class="admin">
+        <div class="container-fluid">
+            <ng-view></ng-view>
+            {{4+5}} <p>LAYOUT</p>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.min.js"></script>
+    
+    <script src="app.js"></script>
+
+    <!-- dataServices -->
+    <script src="services/dataServices.js"></script>
+
+    <!-- home -->
+    <script src="routes/home/homeController.js"></script>
+    <script src="routes/home/index.js"></script>
+
+    <!-- store -->
+    <script src="routes/store/storeController.js"></script>
+    <script src="routes/store/index.js"></script>
+
+
+</body>

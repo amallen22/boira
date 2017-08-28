@@ -17,7 +17,7 @@
   text-transform: lowercase; }
 
 /* colors */
-.black, h1, h2 {
+.black, h1, h2, .admin {
   color: #030c07; }
 
 .gold, #events .list li .date .day, #artists .perfil h4, .item .detail h4, .item .detail .zoom .icon-z, .btn.btn-default.gold {
@@ -104,6 +104,10 @@ nav {
       display: inline-block; }
       nav ul li a {
         padding: 15px; }
+      nav ul li:hover {
+        color: #d0c38e;
+        border-bottom: 1px solid #d0c38e;
+        text-decoration: none; }
   nav.sticky {
     position: fixed;
     top: 0;
@@ -308,14 +312,18 @@ nav {
       margin: 5% 0 2%; }
 
 /* Gallery */
-#gallery .container {
+#gallery .container ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
-  #gallery .container div {
+  #gallery .container ul li {
     width: 49%;
     margin-bottom: 7.5px;
     margin-right: 1%; }
+
+/* ADMIN */
+.admin {
+  background-color: #d0c38e; }
 
 /* buttons bootstrap costumized */
 .btn.btn-default {
@@ -349,6 +357,6 @@ nav {
     section .container {
       padding: 15px 30px; }
   /* gallery */
-  #gallery .container div {
+  #gallery .container ul li {
     width: 24%;
     margin-right: 1%; } }

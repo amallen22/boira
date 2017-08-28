@@ -1,0 +1,46 @@
+{
+	"products": [{ 
+		"url": "../images/merch/t-shirts/shinning-black.jpg",
+		"title": "Refugi light brown",
+	    "subtitle": "From Böira design by Marc Rios",
+		"category": {
+			"slug": "tshirts",
+			"description": "T-shirt / Apparel"
+		},
+		"description": "Light brown with blue ink Main photo Böira Refugi",
+		"price": 10
+	},
+	{
+		"url": "../images/merch/t-shirts/shinning-black.jpg",
+		"title": "Refugi light brown",
+	    "subtitle": "From Böira design by Marc Rios",
+		"category": {
+			"slug": "tshirts",
+			"description": "T-shirt / Apparel"
+		},
+		"description": "Light brown with blue ink Main photo Böira Refugi",
+		"price": 5
+	},
+	{
+		"url": "../images/merch/t-shirts/shinning-black.jpg",
+		"title": "Refugi light brown",
+	    "subtitle": "From Böira design by Marc Rios",
+		"category": {
+			"slug": "bags",
+			"description": "Bags / Apparel"
+		},
+		"description": "Light brown with blue ink Main photo Böira Refugi",
+		"price": 5
+	},
+	{
+		"url": "../images/merch/t-shirts/shinning-black.jpg",
+		"title": "Refugi light brown",
+	    "subtitle": "From Böira design by Marc Rios",
+		"category": {
+			"slug": "bags",
+			"description": "Bags / Apparel"
+		},
+		"description": "Light brown with blue ink Main photo Böira Refugi",
+		"price": 8
+	}]
+}
