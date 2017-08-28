@@ -1,6 +1,17 @@
 {
 	"products": [{ 
-		"url": "../images/merch/t-shirts/shinning-black.jpg",
+		"url": "../images/merch/t-shirts/refugi_dark-brown.jpg",
+		"title": "Refugi dark brown",
+	    "subtitle": "From Böira design by Marc Rios",
+		"category": {
+			"slug": "tshirts",
+			"description": "T-shirt / Apparel"
+		},
+		"description": "Light brown with blue ink Main photo Böira Refugi",
+		"price": "20 EUR"
+	},
+	{
+		"url": "../images/merch/t-shirts/refugi_light-brown.jpg",
 		"title": "Refugi light brown",
 	    "subtitle": "From Böira design by Marc Rios",
 		"category": {
@@ -8,39 +19,50 @@
 			"description": "T-shirt / Apparel"
 		},
 		"description": "Light brown with blue ink Main photo Böira Refugi",
-		"price": 10
+		"price": "20 EUR"
 	},
 	{
-		"url": "../images/merch/t-shirts/shinning-black.jpg",
-		"title": "Refugi light brown",
+		"url": "../images/merch/music/cd_si-de-la-runa-neixes.jpg",
+		"title": "Si dela runa neixés",
 	    "subtitle": "From Böira design by Marc Rios",
 		"category": {
-			"slug": "tshirts",
-			"description": "T-shirt / Apparel"
+			"slug": "music",
+			"description": "Music / Album CD"
 		},
-		"description": "Light brown with blue ink Main photo Böira Refugi",
-		"price": 5
+		"description": "Firs album from Böira released at 2015",
+		"price": "12 EUR"
 	},
 	{
-		"url": "../images/merch/t-shirts/shinning-black.jpg",
-		"title": "Refugi light brown",
+		"url": "../images/merch/music/vinyl_si-de-la-runa-neixes.jpg",
+		"title": "Si dela runa neixés",
+	    "subtitle": "From Böira design by Marc Rios",
+		"category": {
+			"slug": "music",
+			"description": "Music / Album Vinyl"
+		},
+		"description": "Firs album from Böira released at 2015",
+		"price": "15 EUR"
+	},
+	{
+		"url": "../images/merch/bags/arbres_tote.jpg",
+		"title": "Bossa El refugi",
 	    "subtitle": "From Böira design by Marc Rios",
 		"category": {
 			"slug": "bags",
 			"description": "Bags / Apparel"
 		},
 		"description": "Light brown with blue ink Main photo Böira Refugi",
-		"price": 5
+		"price": "10 EUR"
 	},
 	{
-		"url": "../images/merch/t-shirts/shinning-black.jpg",
-		"title": "Refugi light brown",
+		"url": "../images/merch/bags/shining_tote.jpg",
+		"title": "Bossa From Nepal",
 	    "subtitle": "From Böira design by Marc Rios",
 		"category": {
 			"slug": "bags",
 			"description": "Bags / Apparel"
 		},
 		"description": "Light brown with blue ink Main photo Böira Refugi",
-		"price": 8
+		"price": "10 EUR"
 	}]
 }

@@ -23,11 +23,13 @@
       <thead>
         <tr>
           <th>Title</th>
+          <th>Text</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="product in products | filter:byCategory">
-          <td>{{product.title}}</td>
+        <tr ng-repeat="entry in entries | filter:byCategory">
+          <td>{{entry.category}}</td>
+          <td>{{entry.text}}</td>
         </tr>
       </tbody>
     </table>
