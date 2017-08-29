@@ -1,12 +1,12 @@
 angular.module('boiraApp')
 
-.controller('storeController', function ($scope, $rootScope, localData, $q) {
+.controller('storeController', function ($scope, $rootScope, localData) {
   $scope.section = 'STORE'
 
   // Local API item store
   localData.storeData()
   .then(function (response) {
-    // console.log(response.data.products[0].category.slug)
+    console.log(response.data)
     $scope.products = response.data.products
   })
 
