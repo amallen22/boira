@@ -1,88 +1,72 @@
 [{ 
-	"url": "../images/merch/t-shirts/refugi_dark-brown.jpg",
+	"image": "../images/merch/t-shirts/refugi_dark-brown.jpg",
 	"title": "Refugi dark brown",
     "subtitle": "From Böira design by Marc Rios",
-	"category": {
-		"slug": "tshirts",
-		"description": "T-shirt / Apparel"
-	},
+	"category": "tshirts",
+	"categoryGroup": "T-shirt / Apparel",
 	"description": "Dark brown with dark ink Main photo Böira Refugi",
 	"price": "20 EUR"
 },
 {
-	"url": "../images/merch/t-shirts/refugi_light-brown.jpg",
+	"image": "../images/merch/t-shirts/refugi_light-brown.jpg",
 	"title": "Refugi light brown",
     "subtitle": "From Böira design by Marc Rios",
-	"category": {
-		"slug": "tshirts",
-		"description": "T-shirt / Apparel"
-	},
+	"category": "tshirts",
+	"categoryGroup": "T-shirt / Apparel",
 	"description": "Light brown with brown ink Main photo Böira Refugi",
 	"price": "20 EUR"
 },
 {
-	"url": "../images/merch/t-shirts/refugi_grey_girl.jpg",
+	"image": "../images/merch/t-shirts/refugi_grey_girl.jpg",
 	"title": "Refugi light grey girl",
     "subtitle": "From Böira design by Marc Rios",
-	"category": {
-		"slug": "tshirts",
-		"description": "T-shirt / Apparel"
-	},
+	"category": "tshirts",
+	"categoryGroup": "T-shirt / Apparel",
 	"description": "Light grey with blue ink Main photo Böira Refugi",
 	"price": "20 EUR"
 },
 {
-	"url": "../images/merch/t-shirts/polyhedral_tree_black.jpg",
+	"image": "../images/merch/t-shirts/polyhedral_tree_black.jpg",
 	"title": "Polyhedral black",
     "subtitle": "From Böira design by Marc Rios",
-	"category": {
-		"slug": "tshirts",
-		"description": "T-shirt / Apparel"
-	},
+	"category": "tshirts",
+	"categoryGroup": "T-shirt / Apparel",
 	"description": "Black with white ink logo Böira",
 	"price": "15 EUR"
 },
 {
-	"url": "../images/merch/music/cd_si-de-la-runa-neixes.jpg",
+	"image": "../images/merch/music/cd_si-de-la-runa-neixes.jpg",
 	"title": "Si dela runa neixés",
     "subtitle": "From Böira design by Marc Rios",
-	"category": {
-		"slug": "music",
-		"description": "Music / Album CD"
-	},
+	"category": "music",
+	"categoryGroup": "Music / Album CD",
 	"description": "Firs album from Böira released at 2015",
 	"price": "12 EUR"
 },
 {
-	"url": "../images/merch/music/vinyl_si-de-la-runa-neixes.jpg",
+	"image": "../images/merch/music/vinyl_si-de-la-runa-neixes.jpg",
 	"title": "Si dela runa neixés",
     "subtitle": "From Böira design by Marc Rios",
-	"category": {
-		"slug": "music",
-		"description": "Music / Album Vinyl"
-	},
+	"category": "music",
+	"categoryGroup": "Music / Album Vinyl",
 	"description": "Firs album from Böira released at 2015",
 	"price": "15 EUR"
 },
 {
-	"url": "../images/merch/bags/arbres_tote.jpg",
+	"image": "../images/merch/bags/arbres_tote.jpg",
 	"title": "Bossa El refugi",
     "subtitle": "From Böira design by Marc Rios",
-	"category": {
-		"slug": "bags",
-		"description": "Bags / Apparel"
-	},
+	"category": "bags",
+	"categoryGroup": "Bags / Apparel",
 	"description": "Light brown with blue ink Main photo Böira Refugi",
 	"price": "10 EUR"
 },
 {
-	"url": "../images/merch/bags/shining_tote.jpg",
+	"image": "../images/merch/bags/shining_tote.jpg",
 	"title": "Bossa From Nepal",
     "subtitle": "From Böira design by Marc Rios",
-	"category": {
-		"slug": "bags",
-		"description": "Bags / Apparel"
-	},
+	"category": "bags",
+	"categoryGroup": "Bags / Apparel",
 	"description": "Light brown with blue ink Main photo Böira Refugi",
 	"price": "10 EUR"
 }]

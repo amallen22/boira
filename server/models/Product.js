@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const collection = 'products'
 
 const ProductSchema = new Schema({
-  url: {
+  image: {
     type: String,
     required: true
   },
@@ -16,14 +16,12 @@ const ProductSchema = new Schema({
     required: true
   },
   category: {
-    slug: {
-      type: String,
-      required: true
-    },
-    description: {
-      type: String,
-      required: true
-    }
+    type: String,
+    required: true
+  },
+  categoryGroup: {
+    type: String,
+    required: true
   },
   description: {
     type: String,

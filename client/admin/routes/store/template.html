@@ -1,36 +1,65 @@
 <div class="col-md-4">
     <h1>{{ section }}</h1>
     <h2>Add, edit and remove items from your store</h2>
-    <a class="btn btn-default" ng-href="/addProduct">Add product</a>
+    <a class="btn btn-default" ng-click="toogle(options = !options)">{{ btnToogle }}</a>
 </div>
 <div class="col-md-8">
     <div ng-controller="storeController">
-        Filter By Title: 
+        Filter By Title:
         <div class="btn-group">
-            <button 
-                type="button" 
-                ng-repeat="category in categories" 
-                class="btn btn-default" 
-                ng-model="selected[category]" 
-                btn-checkbox 
-                ng-class="{active: category == selectedCategory}" 
-                ng-click="setSelectedTitle(category)">{{category}}
+            <button type="button" ng-repeat="category in categories" class="btn btn-default" ng-model="selected[category]" btn-checkbox ng-class="{active: category == selectedCategory}" ng-click="setSelectedTitle(category)">{{category}}
             </button>
         </div>
-        <div class="row">
+        <div class="row" ng-hide="options">
             <div class="col-xs-12 col-sm-6" ng-repeat="product in products | filter:byCategory">
                 <div class="item">
-                    <img ng-src="{{ product.url }}" alt="" />
+                    <img ng-src="{{ product.image }}" alt="" />
                     <div class="detail">
                         <h4>{{ product.title }}</h4>
                         <p>{{ product.subtitle }}</p>
-                        <div class="category">{{ product.category.description }}</div>
+                        <div class="category">{{ product.categoryGroup }}</div>
                         <small class="description">{{ product.description }}</small>
                         <div class="price"> {{ product.price }}</div>
                         <a href="#" class="btn btn-default gold">Edit</a>
                     </div>
                 </div>
-            </div>        
+            </div>
+        </div>
+        <div ng-show="options" class="row">
+            <div class="col-xs-12 col-sm-6">
+                <form>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input ng-model="title" type="text" class="form-control" id="title" placeholder="Title...">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Url image</label>
+                        <input name="image" ng-model="image" type="text" class="form-control" id="image" placeholder="url image...">
+                    </div>
+                    <div class="form-group">
+                        <label for="subtitle">Subtitle</label>
+                        <input name="subtitle" ng-model="subtitle" type="text" class="form-control" id="subtitle" placeholder="Subtitle...">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input name="description" ng-model="description" type="text" class="form-control" id="description" placeholder="Description...">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category slug</label>
+                        <input name="category" ng-model="category" type="text" class="form-control" id="category" placeholder="Category slug...">
+                    </div>
+                    <div class="form-group">
+                        <label for="categoryGroup">Category description</label>
+                        <input name="categoryGroup" ng-model="categoryGroup" type="text" class="form-control" id="categoryGroup" placeholder="Category description...">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input ng-model="price" type="text" class="form-control" id="price" placeholder="Price...">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-default" ng-click="add()">Add product</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

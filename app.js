@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
+const bodyParser = require('body-parser')
 const app = express()
 const PORT = process.env.PORT || 3022
 
@@ -11,7 +12,6 @@ console.log(itemStore)
 const URL_DB = 'mongodb://localhost:27017/boira'
 
 // ------ mongoose allProducts require ---------
-const allProducts = require('./server/handlers/allProducts')
 
 // show html render nested
 app.locals.pretty = true
@@ -20,18 +20,21 @@ app.locals.pretty = true
 const pathPublic = path.join(process.cwd(), 'client')
 app.use(express.static(pathPublic))
 
+// Necesario para recibir datos usando Ajax
+app.use(bodyParser.json())
+
+// este objeto contendrá {key: value}, donde el valor podrá ser string o array (cuando extended es false),
+app.use(bodyParser.urlencoded({ extended: false }))
+
 // ------ mongoose ---------
 mongoose.promise = Promise
 mongoose.connect(URL_DB, {useMongoClient: true})
 
 // ------ router ---------
-const routesProducts = require('./server/routes/products')
+const products = require('./server/routes/products')
 
-// -------------- rutas server ----------
-app.use('/store', routesProducts)
-
-// BBDD call all products
-app.get('/api/products', allProducts)
+// -------------- rutas server middleware ----------
+app.use('/api/products', products)
 
 // --------- LOCAL API from JSON ---------
 // app.get('/api', (req, res) => res.send(itemStore))

@@ -1,10 +1,22 @@
 angular.module('boiraApp')
 
-.controller('storeController', function ($scope, $rootScope, localData) {
+.controller('storeController', function ($scope, $rootScope, productService) {
   $scope.section = 'STORE'
 
+  // $scope.btnToogle = 'Add product'
+
+  $scope.btnToogle = 'Add product'
+
+  $scope.toogle = function () {
+    if ($scope.options) {
+      $scope.btnToogle = 'Show products'
+    } else {
+      $scope.btnToogle = 'Add product'
+    }
+  }
+
   // Local API item store
-  localData.storeData()
+  productService.all()
   .then(function (response) {
     console.log(response.data)
     $scope.products = response.data.products
@@ -24,6 +36,31 @@ angular.module('boiraApp')
 
   // Filter
   $scope.byCategory = function (entry) {
-    return entry.category.slug === $scope.selectedCategory || $scope.selectedCategory === undefined
+    return entry.category === $scope.selectedCategory || $scope.selectedCategory === undefined
+  }
+
+  // add product form
+
+  $scope.add = function () {
+    const title = $scope.title
+    const image = $scope.image
+    const subtitle = $scope.subtitle
+    const description = $scope.description
+    const category = $scope.category
+    const categoryGroup = $scope.categoryGroup
+    const price = $scope.price
+
+    const product = {
+      title,
+      image,
+      subtitle,
+      description,
+      category,
+      categoryGroup,
+      price
+    }
+
+    productService.add(product)
+    .then(res => console.log(res))
   }
 })
