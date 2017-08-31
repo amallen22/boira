@@ -3,8 +3,7 @@ angular.module('boiraApp')
 .controller('storeController', function ($scope, $rootScope, productService) {
   $scope.section = 'STORE'
 
-  // $scope.btnToogle = 'Add product'
-
+  // Toogle button
   $scope.btnToogle = 'Add product'
 
   $scope.toogle = function () {
@@ -15,10 +14,10 @@ angular.module('boiraApp')
     }
   }
 
-  // Local API item store
+  // BBDD products store
   productService.all()
   .then(function (response) {
-    console.log(response.data)
+    // console.log(response.data)
     $scope.products = response.data.products
   })
 
@@ -40,7 +39,6 @@ angular.module('boiraApp')
   }
 
   // add product form
-
   $scope.add = function () {
     const title = $scope.title
     const image = $scope.image
@@ -62,5 +60,13 @@ angular.module('boiraApp')
 
     productService.add(product)
     .then(res => console.log(res))
+  }
+
+  // show form product by id
+
+  $scope.update = function (id) {
+    // console.log(id)
+    productService.update(id)
+    .then(res => console.log('response promise with id:' + res))
   }
 })

@@ -10,5 +10,10 @@ angular.module('boiraApp')
     return $http.post('/api/products/add', product)
   }
 
-  return { all, add }
+  const update = function (id) {
+    console.log('id: ' + id + ' from productService')
+    return $http.get('/api/products/' + id)
+  }
+
+  return { all, add, update }
 })

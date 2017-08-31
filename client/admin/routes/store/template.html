@@ -20,7 +20,8 @@
                         <div class="category">{{ product.categoryGroup }}</div>
                         <small class="description">{{ product.description }}</small>
                         <div class="price"> {{ product.price }}</div>
-                        <a href="#" class="btn btn-default gold">Edit</a>
+                        <!-- <input type="hidden" value="{{ product._id }}" />  -->
+                        <a href="" class="btn btn-default gold" ng-click="update(product._id)" ng-class="{active: id == selectedId}" ng-model="selected[id]">Edit</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +31,7 @@
                 <form>
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input ng-model="title" type="text" class="form-control" id="title" placeholder="Title...">
+                        <input value="{{ product._id}}" ng-model="title" type="text" class="form-control" id="title" placeholder="Title...">
                     </div>
                     <div class="form-group">
                         <label for="image">Url image</label>
