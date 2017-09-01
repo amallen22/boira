@@ -5,8 +5,8 @@ const bodyParser = require('body-parser')
 const app = express()
 const PORT = process.env.PORT || 3022
 
-const itemStore = require('./data/store.json')
-console.log(itemStore)
+// const itemStore = require('./data/store.json')
+// console.log(itemStore)
 
 // ------ mongoose url origin ---------
 const URL_DB = 'mongodb://localhost:27017/boira'
@@ -31,10 +31,14 @@ mongoose.promise = Promise
 mongoose.connect(URL_DB, {useMongoClient: true})
 
 // ------ router ---------
-const products = require('./server/routes/products')
+const routesProduct = require('./server/routes/product')
+const routesProducts = require('./server/routes/products')
 
-// -------------- rutas server middleware ----------
-app.use('/api/products', products)
+// -------------- rutas server  ----------
+app.use('/api/product', routesProduct)
+app.use('/api/products', routesProducts)
+
+app.use('/api/product/:id', routesProduct)
 
 // --------- LOCAL API from JSON ---------
 // app.get('/api', (req, res) => res.send(itemStore))

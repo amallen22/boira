@@ -6,10 +6,3 @@ angular.module('boiraApp')
     controller: 'storeController'
   })
 })
-.config(function ($routeProvider) {
-  $routeProvider
-  .when('/store/:id', {
-    templateUrl: 'routes/store/template.html',
-    controller: 'storeController'
-  })
-})

@@ -1,6 +1,6 @@
 angular.module('boiraApp')
 
-.controller('storeController', function ($scope, $rootScope, productService) {
+.controller('storeController', function ($scope, $rootScope, productService, $routeParams) {
   $scope.section = 'STORE'
 
   // Toogle button
@@ -14,7 +14,7 @@ angular.module('boiraApp')
     }
   }
 
-  // BBDD products store
+    // BBDD products store
   productService.all()
   .then(function (response) {
     // console.log(response.data)
@@ -60,13 +60,5 @@ angular.module('boiraApp')
 
     productService.add(product)
     .then(res => console.log(res))
-  }
-
-  // show form product by id
-
-  $scope.update = function (id) {
-    // console.log(id)
-    productService.update(id)
-    .then(res => console.log('response promise with id:' + res))
   }
 })

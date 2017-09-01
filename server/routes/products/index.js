@@ -1,12 +1,10 @@
 const express = require('express')
 const router = express.Router()
 
-const add = require('./add')
-const all = require('./all')
-const update = require('./update')
+const add = require('./handlers/add')
+const all = require('./handlers/all')
 
 router.post('/add', add)
 router.get('/', all)
-router.get('/:id', update)
 
 module.exports = router

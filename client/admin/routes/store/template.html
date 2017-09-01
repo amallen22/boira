@@ -20,8 +20,8 @@
                         <div class="category">{{ product.categoryGroup }}</div>
                         <small class="description">{{ product.description }}</small>
                         <div class="price"> {{ product.price }}</div>
-                        <!-- <input type="hidden" value="{{ product._id }}" />  -->
-                        <a href="" class="btn btn-default gold" ng-click="update(product._id)" ng-class="{active: id == selectedId}" ng-model="selected[id]">Edit</a>
+                        <!-- ng-model="selected[id]" -->
+                        <a ng-href="#!/store/{{ product._id }}" ng-click="showProduct(product._id)" class="btn btn-default gold" >Edit</a>
                     </div>
                 </div>
             </div>
