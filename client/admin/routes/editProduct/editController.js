@@ -15,4 +15,28 @@ angular.module('boiraApp')
       $scope.categoryGroup = res.data.categoryGroup
       $scope.price = res.data.price
     })
+
+    // update product form
+  $scope.updateProduct = function () {
+    const title = $scope.title
+    const image = $scope.image
+    const subtitle = $scope.subtitle
+    const description = $scope.description
+    const category = $scope.category
+    const categoryGroup = $scope.categoryGroup
+    const price = $scope.price
+
+    const oProduct = {
+      title,
+      image,
+      subtitle,
+      description,
+      category,
+      categoryGroup,
+      price
+    }
+
+    productService.updateProduct(id, oProduct)
+      .then(res => console.log('RES de edit controller: ', res))
+  }
 })
