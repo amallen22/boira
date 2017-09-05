@@ -30,15 +30,23 @@ app.use(bodyParser.urlencoded({ extended: false }))
 mongoose.promise = Promise
 mongoose.connect(URL_DB, {useMongoClient: true})
 
-// ------ router ---------
+// ------ router products ---------
 const routesProduct = require('./server/routes/product')
 const routesProducts = require('./server/routes/products')
 
-// -------------- rutas server  ----------
-app.use('/api/product', routesProduct)
+// -------------- server routes products  ----------
 app.use('/api/products', routesProducts)
-
+app.use('/api/product', routesProduct)
 app.use('/api/product/:id', routesProduct)
+
+// ------ router events ---------
+// const routesProduct = require('./server/routes/event')
+const routesEvents = require('./server/routes/events')
+
+// -------------- server routes events  ----------
+app.use('/api/events', routesEvents)
+// app.use('/api/product', routesProduct)
+// app.use('/api/product/:id', routesProduct)
 
 // --------- LOCAL API from JSON ---------
 // app.get('/api', (req, res) => res.send(itemStore))
