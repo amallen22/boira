@@ -1,6 +1,6 @@
 angular.module('boiraApp')
 
-.controller('storeController', function ($scope, $rootScope, productService, $routeParams, $window, $location) {
+.controller('storeController', function ($scope, $rootScope, productService, $routeParams, $window, $location, Upload) {
   $scope.section = 'STORE'
 
   // Toogle button
@@ -41,7 +41,7 @@ angular.module('boiraApp')
   // add product form
   $scope.add = function () {
     const title = $scope.title
-    const image = $scope.image
+    const imageLink = $scope.imageLink
     const subtitle = $scope.subtitle
     const description = $scope.description
     const category = $scope.category
@@ -50,7 +50,7 @@ angular.module('boiraApp')
 
     const product = {
       title,
-      image,
+      imageLink,
       subtitle,
       description,
       category,
@@ -68,5 +68,28 @@ angular.module('boiraApp')
     productService.removeProduct(id)
       // .then(res => console.log('Remove by id: ', res)
       .then($window.location.reload())
+  }
+
+/// /
+
+  $scope.fileSelected = (files) => {
+    if (files && files.length) {
+      $scope.file = files[0]
+    }
+  }
+
+  $scope.uploadFile = function () {
+    const url = '/upload'
+    const file = $scope.file
+
+      // show spinning when uploading
+    $scope.uploading = true
+    document.querySelector('.preview').onload = () => {
+      $scope.$apply(() => $scope.uploading = false)
+    }
+
+    Upload.upload({ url, file })
+        .success(({imageLink}) => $scope.imageLink = imageLink)
+        // .progress( console.log )
   }
 })

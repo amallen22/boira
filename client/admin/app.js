@@ -1,1 +1,1 @@
-angular.module('boiraApp', ['ngRoute'])
+angular.module('boiraApp', ['ngRoute', 'ngFileUpload'])

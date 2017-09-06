@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const collection = 'products'
 
 const ProductSchema = new Schema({
-  image: {
+  imageLink: {
     type: String,
     required: true
   },

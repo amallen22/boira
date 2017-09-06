@@ -5,6 +5,9 @@ const bodyParser = require('body-parser')
 const app = express()
 const PORT = process.env.PORT || 3022
 
+global.__base = __dirname + '/server'
+require('dotenv').load()
+
 // const itemStore = require('./data/store.json')
 // console.log(itemStore)
 
@@ -29,6 +32,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // ------ mongoose ---------
 mongoose.promise = Promise
 mongoose.connect(URL_DB, {useMongoClient: true})
+
+// ------ CLOUDINARY (upload images) ---------
+const routesUploadImage = require('./server/routes/cloudinary')
+app.use(routesUploadImage)
 
 // ------ router products ---------
 const routesProduct = require('./server/routes/product')
