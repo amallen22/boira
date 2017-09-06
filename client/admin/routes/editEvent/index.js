@@ -4,6 +4,6 @@ angular.module('boiraApp')
   $routeProvider
   .when('/event/:id', {
     templateUrl: 'routes/editEvent/template.html',
-    controller: 'editController'
+    controller: 'editEventController'
   })
 })

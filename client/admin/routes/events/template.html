@@ -12,7 +12,7 @@
                         <div class="date">
                             <div class="day">{{ event.day }}</div>
                             <div class="month_year">
-                                <span>messss{{ event.month }}</span>
+                                <span>{{ event.month }}</span>
                                 <span>{{ event.year }}</span>
                             </div>
                         </div>
@@ -22,6 +22,8 @@
                             <h5>{{ event.ticketLink }}</h5>
                         </div>
                         <a ng-href="#!/event/{{ event._id }}" ng-click="showEvent(event._id)" class="btn btn-default">Edit</a>
+
+                        <a ng-href="" ng-click="removeEvent(event._id)" class="btn btn-default" >Remove</a>
                     </li>
                 </ul>
             </div>

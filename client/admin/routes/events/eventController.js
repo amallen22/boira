@@ -1,6 +1,6 @@
 angular.module('boiraApp')
 
-.controller('eventController', function ($scope, $rootScope, eventService, $routeParams) {
+.controller('eventController', function ($scope, $rootScope, eventService, $routeParams, $window, $location) {
   $scope.section = 'EVENTS'
 
   // Toogle button
@@ -40,6 +40,14 @@ angular.module('boiraApp')
     }
 
     eventService.addEvent(oEvent)
-    .then(res => console.log(res))
+    // .then(res => console.log(oEvent))
+    .then($window.location.reload())
+  }
+
+  // remove
+  $scope.removeEvent = function (id) {
+    eventService.removeEvent(id)
+      // .then(res => console.log('Remove by id: ', res)
+      .then($window.location.reload())
   }
 })

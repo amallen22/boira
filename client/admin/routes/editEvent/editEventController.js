@@ -1,12 +1,12 @@
 angular.module('boiraApp')
 
-.controller('editController', function ($scope, $routeParams, $rootScope, eventService) {
-  $scope.section = 'EVENT EDIT'
+.controller('editEventController', function ($scope, $routeParams, $rootScope, eventService, $window, $location) {
+  // $scope.section = 'EVENT EDIT'
 
   var {id} = $routeParams
   eventService.showEvent(id)
     .then(res => {
-      console.log(res)
+      // console.log(res)
       $scope.day = res.data.day
       $scope.month = res.data.month
       $scope.year = res.data.year
@@ -34,6 +34,11 @@ angular.module('boiraApp')
     }
 
     eventService.updateEvent(id, oEvent)
-      .then(res => console.log('RES de edit controller: ', res))
+      // .then(res => console.log('RES de edit controller: ', res))
+      .then(() => {
+        // $window.location.reload()
+        $location.path('/events')
+      })
+      .catch(console.log('no va'))
   }
 })

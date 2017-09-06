@@ -13,7 +13,7 @@ angular.module('boiraApp')
   }
 
   const showEvent = function (id) {
-    // console.log('EventService id: ', id)
+    console.log('EventService id: ', id)
     return $http.get(`/api/event/${id}`)
   }
 
@@ -21,5 +21,10 @@ angular.module('boiraApp')
     return $http.put(`/api/event/${id}`, oEvent)
   }
 
-  return { showEvents, addEvent, showEvent, updateEvent}
+  const removeEvent = function (id) {
+    // console.log('eventService add event')
+    return $http.delete(`/api/event/${id}`, id)
+  }
+
+  return { showEvents, addEvent, showEvent, updateEvent, removeEvent}
 })

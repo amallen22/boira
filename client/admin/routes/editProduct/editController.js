@@ -1,7 +1,7 @@
 angular.module('boiraApp')
 
-.controller('editController', function ($scope, $routeParams, $rootScope, productService) {
-  $scope.section = 'PRODUCT EDIT'
+.controller('editController', function ($scope, $routeParams, $rootScope, productService, $location) {
+  $scope.section = 'EDIT {{ title }}'
 
   var {id} = $routeParams
   productService.showProduct(id)
@@ -37,6 +37,11 @@ angular.module('boiraApp')
     }
 
     productService.updateProduct(id, oProduct)
-      .then(res => console.log('RES de edit controller: ', res))
+      // .then(res => console.log('RES de edit controller: ', res))
+      .then(() => {
+        // $window.location.reload()
+        $location.path('/store')
+      })
+      .catch(console.log('no va'))
   }
 })

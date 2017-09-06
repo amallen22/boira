@@ -1,6 +1,6 @@
 angular.module('boiraApp')
 
-.controller('storeController', function ($scope, $rootScope, productService, $routeParams) {
+.controller('storeController', function ($scope, $rootScope, productService, $routeParams, $window, $location) {
   $scope.section = 'STORE'
 
   // Toogle button
@@ -59,6 +59,14 @@ angular.module('boiraApp')
     }
 
     productService.add(product)
-    .then(res => console.log(res))
+    // .then(res => console.log(res))
+    .then($window.location.reload())
+  }
+
+  // remove product
+  $scope.removeProduct = function (id) {
+    productService.removeProduct(id)
+      // .then(res => console.log('Remove by id: ', res)
+      .then($window.location.reload())
   }
 })

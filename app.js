@@ -40,13 +40,13 @@ app.use('/api/product', routesProduct)
 app.use('/api/product/:id', routesProduct)
 
 // ------ router events ---------
-// const routesProduct = require('./server/routes/event')
+const routesEvent = require('./server/routes/event')
 const routesEvents = require('./server/routes/events')
 
 // -------------- server routes events  ----------
 app.use('/api/events', routesEvents)
-// app.use('/api/product', routesProduct)
-// app.use('/api/product/:id', routesProduct)
+app.use('/api/event', routesEvent)
+app.use('/api/event/:id', routesEvent)
 
 // --------- LOCAL API from JSON ---------
 // app.get('/api', (req, res) => res.send(itemStore))
