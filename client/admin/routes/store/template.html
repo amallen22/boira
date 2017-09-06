@@ -5,13 +5,13 @@
 </div>
 <div class="col-md-8">
     <div ng-controller="storeController">
-        Filter By Title:
-        <div class="btn-group">
-            <button type="button" ng-repeat="category in categories" class="btn btn-default" ng-model="selected[category]" btn-checkbox ng-class="{active: category == selectedCategory}" ng-click="setSelectedTitle(category)">{{category}}
-            </button>
-        </div>
         <div class="row" ng-hide="options">
             <div class="col-xs-12 col-sm-6" ng-repeat="product in products | filter:byCategory">
+                Filter By Title:
+                <div class="btn-group">
+                    <button type="button" ng-repeat="category in categories" class="btn btn-default" ng-model="selected[category]" btn-checkbox ng-class="{active: category == selectedCategory}" ng-click="setSelectedTitle(category)">{{category}}
+                    </button>
+                </div>
                 <div class="item">
                     <img ng-src="{{ product.image }}" alt="" />
                     <div class="detail">
