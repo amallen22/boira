@@ -8,7 +8,7 @@ angular.module('boiraApp')
     .then(res => {
       console.log(res)
       $scope.title = res.data.title
-      $scope.image = res.data.image
+      // $scope.image = res.data.image
       $scope.subtitle = res.data.subtitle
       $scope.description = res.data.description
       $scope.category = res.data.category
@@ -19,7 +19,7 @@ angular.module('boiraApp')
     // update product form
   $scope.updateProduct = function () {
     const title = $scope.title
-    const image = $scope.image
+    // const image = $scope.image
     const subtitle = $scope.subtitle
     const description = $scope.description
     const category = $scope.category
@@ -28,7 +28,7 @@ angular.module('boiraApp')
 
     const oProduct = {
       title,
-      image,
+      // image,
       subtitle,
       description,
       category,
