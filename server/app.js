@@ -24,7 +24,7 @@ app.set('view engine', 'pug')
 app.set('views', path.join(process.cwd(), './server/views'))
 
 // ------ mongoose url origin ---------
-const URL_DB = 'mongodb://localhost:27017/boira'
+const URL_DB = process.env.URL_DB || 'mongodb://localhost:27017/boira'
 
 // ------ mongoose ---------
 mongoose.promise = Promise
