@@ -1,0 +1,18 @@
+section#store
+  h3 Store
+  .container
+    .row
+      .col-xs-12.col-sm-6
+        each product in productsList
+          .item
+            img(src=product.imageLink, alt='')
+            .detail
+              h4= product.title
+              p= product.subtitle
+              a.zoom(href='#')
+                i.icon-z +
+                small Zoom
+              .category= product.categoryGroup
+              small.description= product.description
+              .price= product.price
+              a.btn.btn-default.gold(href='#') Buy now

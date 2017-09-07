@@ -16,6 +16,8 @@ const URL_DB = 'mongodb://localhost:27017/boira'
 
 // ------ mongoose allProducts require ---------
 
+app.set('view engine', 'pug')
+
 // show html render nested
 app.locals.pretty = true
 
