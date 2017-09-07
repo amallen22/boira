@@ -2,7 +2,10 @@
   "name": "boira_app",
   "version": "1.0.0",
   "description": "Boira website",
-  "main": "app.js",
+  "main": "index.js",
+  "engines": {
+    "node": "6.11.0"
+  },
   "scripts": {
     "postinstall": "node ./node_modules/bower/bin/bower install",
     "build:scss": "node-sass client/sass/main.scss client/css/main.css",
