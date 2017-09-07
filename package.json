@@ -7,6 +7,7 @@
     "node": "6.11.0"
   },
   "scripts": {
+    "prestart": "bower install",
     "postinstall": "node ./node_modules/bower/bin/bower install",
     "build:scss": "node-sass client/sass/main.scss client/css/main.css",
     "build:scss:watch": "node-sass client/sass/main.scss client/css/main.css --watch",
