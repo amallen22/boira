@@ -4,6 +4,7 @@ angular.module('boiraApp')
   $routeProvider
   .when('/store/:id', {
     templateUrl: 'routes/editProduct/template.html',
-    controller: 'editController'
+    controller: 'editController',
+    secure: true
   })
 })

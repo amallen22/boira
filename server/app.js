@@ -13,15 +13,30 @@ app.locals.pretty = true
 const pathPublic = path.join(process.cwd(), 'client')
 app.use(express.static(pathPublic))
 
-// Necesario para recibir datos usando Ajax
-app.use(bodyParser.json())
-
 // este objeto contendrá {key: value}, donde el valor podrá ser string o array (cuando extended es false),
 app.use(bodyParser.urlencoded({ extended: false }))
+// Necesario para recibir datos usando Ajax
+app.use(bodyParser.json())
 
 // CONFIG VIEWS
 app.set('view engine', 'pug')
 app.set('views', path.join(process.cwd(), './server/views'))
+
+/// /
+/* Static Path */
+// const publicPath = path.join(__dirname, '../client')
+// app.use(express.static(publicPath))
+
+/* Passport Load */
+const passport = require('./config/passport/')
+app.use(passport.initialize())
+
+/* Routes */
+const authRoutes = require('./routes/auth/')
+const privateRoutes = require('./routes/private/')
+app.use(authRoutes)
+app.use(privateRoutes)
+/// /
 
 // ------ mongoose url origin ---------
 const URL_DB = process.env.URL_DB || 'mongodb://localhost:27017/boira'

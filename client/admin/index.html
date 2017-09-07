@@ -14,10 +14,13 @@
     <aside>
         <nav class="h_menu">
         	<img src="../images/boira_gold.png" />
-            <ul>
+            <ul class="pull-left">
                 <li><a href="#!/store">STORE</a></li>
                 <li><a href="#!/events">EVENTS</a></li>
             </ul>
+            <div ng-controller="NavBarCtrl" class="pull-right">
+                <p>Hi {{ loggedUser }} | <a href="#" ng-click="logout()">Logout</a></p>
+            </div>
         </nav>
     </aside>
     <section class="admin">
@@ -32,6 +35,10 @@
     <script src="../bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
     <script src="../bower_components/ng-file-upload/ng-file-upload.min.js"></script>
     
+    <!-- JWT -->
+    <script src="../bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+    
+    <!-- MAIN -->
     <script src="app.js"></script>
 
     <!-- dataServices -->
@@ -57,5 +64,30 @@
     <!-- event edit -->
     <script src="routes/editEvent/editEventController.js"></script>
     <script src="routes/editEvent/index.js"></script>
+
+    <!-- SERVICES -->
+    <script src="services/AuthService.js"></script>
+    <script src="services/StorageService.js"></script>
+    <script src="services/ApiService.js"></script>
+    <script src="services/AuthInterceptor.js"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="controllers/NavBarCtrl.js"></script>
+
+    <!-- ROUTES -->
+    
+    <!-- /login -->
+    <script src="routes/login/controller.js"></script>
+    <script src="routes/login/config.js"></script>
+
+    <!-- /register -->
+    <script src="routes/register/controller.js"></script>
+    <script src="routes/register/config.js"></script>
+
+    <!-- /stats -->
+    <script src="routes/stats/controller.js"></script>
+    <script src="routes/stats/config.js"></script>
+
+
 
 </body>

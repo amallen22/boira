@@ -3,6 +3,7 @@ angular.module('boiraApp')
   $routeProvider
   .when('/events', {
     templateUrl: 'routes/events/template.html',
-    controller: 'eventController'
+    controller: 'eventController',
+    secure: true
   })
 })

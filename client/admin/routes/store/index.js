@@ -3,6 +3,7 @@ angular.module('boiraApp')
   $routeProvider
   .when('/store', {
     templateUrl: 'routes/store/template.html',
-    controller: 'storeController'
+    controller: 'storeController',
+    secure: true
   })
 })
