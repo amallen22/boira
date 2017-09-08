@@ -10,7 +10,7 @@ section#store
                 h4= product.title
                 p= product.subtitle
                 // Button trigger modal
-                a.zoom(data-toggle='modal', data-target='#zoomModal')
+                a.zoom(data-toggle='modal', data-target=('#' + product._id))
                   i.icon-z +
                   small Zoom
                 .category= product.categoryGroup
@@ -18,7 +18,7 @@ section#store
                 .price= product.price
                 a.btn.btn-default.gold(href='#') Buy now
               // Modal
-              #zoomModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='zoomModalLabel')
+              .modal.fade(id=product._id, tabindex='-1', role='dialog', aria-labelledby=product._id)
                 .modal-dialog(role='document')
                   .modal-content
                     .modal-header
