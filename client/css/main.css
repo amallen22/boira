@@ -494,6 +494,10 @@ nav.h_menu {
   .col-sm-6 + .col-sm-6 {
     margin-top: 30px; } }
 
+@media screen and (max-width: 480px) {
+  .wellcome img {
+    display: none; } }
+
 @media screen and (min-width: 480px) {
   .item .detail .zoom {
     margin: 7% 0; }
