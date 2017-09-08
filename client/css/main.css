@@ -335,7 +335,8 @@ nav.h_menu {
 
 /* store */
 .item {
-  position: relative; }
+  position: relative;
+  margin-bottom: 30px; }
   .item img {
     width: 100%; }
   .item:hover .detail {
