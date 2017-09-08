@@ -12,8 +12,12 @@ cloudinary.config({
 
 function uploadCloudinary (req, res, next) {
   if (req.file) {
+    console.log(req.file, `: req.file => uploadCloudinary 😎`)
     cloudinary.uploader.upload(req.file.path, ({ url }) => {
+      // console.log(req.file.path, `: req.file.path => 😢`)
+      console.log(url, `: url => 😢`)
       if (url) {
+        console.log(url, `: url => uploadCloudinary 👽`)
         req.imageLink = url
         // delete files inside folder but not the folder itself
         del.sync([`${uploadFolderPath}/**`, `!${uploadFolderPath}`])
