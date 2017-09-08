@@ -1,18 +1,31 @@
 section#store
-  h3 Store
+  h3 Störe
   .container
     .row
-      .col-xs-12.col-sm-6
+      .col-xs-12.col-sm-6.col-md-5.col-md-offset-1
         each product in productsList
           .item
             img(src=product.imageLink, alt='')
             .detail
               h4= product.title
               p= product.subtitle
-              a.zoom(href='#')
+              // Button trigger modal
+              a.zoom(data-toggle='modal', data-target='#zoomModal')
                 i.icon-z +
                 small Zoom
               .category= product.categoryGroup
               small.description= product.description
               .price= product.price
               a.btn.btn-default.gold(href='#') Buy now
+            // Modal
+            #zoomModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='zoomModalLabel')
+              .modal-dialog(role='document')
+                .modal-content
+                  .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                      span(aria-hidden='true') ×
+                    h4#myModalLabel.modal-title= product.title
+                  .modal-body
+                    img(src=product.imageLink, alt='product.title')
+                  .modal-footer
+                    button.btn.btn-default.white(type='button', data-dismiss='modal') Close

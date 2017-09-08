@@ -5,6 +5,7 @@
 
     const hScreen = $(window).height()
     console.log(hScreen)
+    $('.bg-home').css('height', hScreen)
   })
 
 /* API Instagram */
@@ -31,4 +32,4 @@
     }
   })
 
-  /* API Local */
+  /* wellcome */
