@@ -408,7 +408,8 @@ nav.h_menu {
 /* ADMIN */
 .admin {
   background-color: #ffffff;
-  /* styles button upload */ }
+  /* styles button upload */
+  /* events */ }
   .admin h2 {
     margin: 15px 0 30px; }
   .admin .filter {
@@ -421,6 +422,18 @@ nav.h_menu {
     font-size: 16px; }
   .admin .image-preview-input {
     margin: 15px 0; }
+  .admin .events {
+    margin-top: 60px; }
+    .admin .events .list h4 {
+      margin: 7.5px 0; }
+    .admin .events .list h5 {
+      margin-bottom: 7.5px; }
+    .admin .events .list li .btn {
+      font-size: 1.2em;
+      margin: 15px 5px 0; }
+    .admin .events .list li a:last-child {
+      display: block;
+      color: #030c07; }
 
 /* forms */
 .form-control {
