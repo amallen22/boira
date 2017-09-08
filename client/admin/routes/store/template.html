@@ -62,20 +62,21 @@
                     </div>
                     
                     <div class="form-group image-preview">
+                        <label for="fileImage">Load image:</label>
                         <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
                         <!-- don't give a name === doesn't send on POST/GET -->
                         <span class="input-group-btn">
                           <!-- image-preview-clear button -->
-                          <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                          <button type="button" class="image-preview-clear" style="display:none;">
                           <span class="glyphicon glyphicon-remove"></span> Clear </button>
                           <!-- image-preview-input -->
-                          <div class="btn btn-default image-preview-input">
+                          <div class="image-preview-input">
                             <span class="glyphicon glyphicon-folder-open"></span>
                             <span class="image-preview-input-title">Browse</span>
-                            <input ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
+                            <input class="btn btn-default " ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
                             <!-- rename it -->
                           </div>
-                          <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-primary">
+                          <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-default">
                             <i ng-hide="uploading" class="glyphicon glyphicon-upload"></i>
                             <i ng-show="uploading" class="glyphicon glyphicon-refresh"></i>
                             <span>Upload</span>

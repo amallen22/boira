@@ -407,7 +407,8 @@ nav.h_menu {
 
 /* ADMIN */
 .admin {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  /* styles button upload */ }
   .admin h2 {
     margin: 15px 0 30px; }
   .admin .filter {
@@ -415,6 +416,11 @@ nav.h_menu {
     margin-top: 60px; }
   .admin .detail a {
     display: inline-block; }
+  .admin .input-group-btn,
+  .admin .image-preview-input {
+    font-size: 16px; }
+  .admin .image-preview-input {
+    margin-top: 15px; }
 
 /* forms */
 .form-control {
