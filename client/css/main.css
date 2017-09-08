@@ -379,6 +379,11 @@ nav.h_menu {
     .item .detail .price {
       font-size: 1.8em;
       margin: 5% 0 2%; }
+    .item .detail a.btn {
+      margin: 15px 5px 0; }
+      .item .detail a.btn i {
+        float: left;
+        font-size: 1.5em; }
 
 /* Gallery */
 #gallery .container {
