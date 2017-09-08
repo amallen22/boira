@@ -420,7 +420,7 @@ nav.h_menu {
   .admin .image-preview-input {
     font-size: 16px; }
   .admin .image-preview-input {
-    margin-top: 15px; }
+    margin: 15px 0; }
 
 /* forms */
 .form-control {
