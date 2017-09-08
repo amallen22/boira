@@ -80,7 +80,8 @@ section > h3 {
 
 a:focus,
 a:hover {
-  color: #ffffff; }
+  color: #ffffff;
+  text-decoration: none; }
 
 /* buttons bootstrap costumized */
 .btn.btn-default {
@@ -283,7 +284,8 @@ nav.h_menu {
     padding: 30px 15px; }
     #events .list li .date {
       margin-right: 15px;
-      margin-left: 15px; }
+      margin-left: 0;
+      float: left; }
       #events .list li .date .day {
         font-size: 3.5em;
         float: left;
@@ -301,7 +303,6 @@ nav.h_menu {
             margin-bottom: 0.35em; }
     #events .list li .place {
       float: left;
-      margin-left: 45px;
       text-align: left; }
       #events .list li .place h4 {
         font-size: 1.4em;
@@ -400,7 +401,36 @@ nav.h_menu {
 
 /* ADMIN */
 .admin {
-  background-color: #d0c38e; }
+  background-color: #ffffff; }
+  .admin h2 {
+    margin: 15px 0 30px; }
+  .admin .filter {
+    margin-bottom: 30px;
+    margin-top: 60px; }
+  .admin .detail a {
+    display: inline-block; }
+
+/* forms */
+.form-control {
+  height: auto;
+  padding: 6px 15px;
+  font-size: 16px;
+  border: none;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border-bottom: 2px solid #000;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+  .form-control:focus {
+    border-color: #d0c386;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+.form-group {
+  margin-bottom: 30px; }
 
 .modal-content {
   background-color: transparent; }
@@ -469,6 +499,11 @@ nav.h_menu {
       padding: 15px 30px; }
   #events h3 {
     margin-left: 30px; }
+  #events .list li .date {
+    margin-right: 15px;
+    margin-left: 15px; }
+  #events .list li .place {
+    margin-left: 45px; }
   #events .list li .btn {
     display: none;
     float: right;
