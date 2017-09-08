@@ -13,19 +13,20 @@
                     </button>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6" ng-repeat="product in products | filter:byCategory">
-                
-                <div class="item">
-                    <img ng-src="{{ product.imageLink }}" alt="" />
-                    <div class="detail">
-                        <h4>{{ product.title }}</h4>
-                        <p>{{ product.subtitle }}</p>
-                        <div class="category">{{ product.categoryGroup }}</div>
-                        <small class="description">{{ product.description }}</small>
-                        <div class="price"> {{ product.price }}</div>
-                        <!-- ng-model="selected[id]" -->
-                        <a ng-href="#!/store/{{ product._id }}" ng-click="showProduct(product._id)" class="btn btn-default gold" >Edit</a>
-                        <a ng-href="" ng-click="removeProduct(product._id)" class="btn btn-default gold" >Remove</a>
+            <div class="row">   
+                <div class="col-xs-12 col-sm-6" ng-repeat="product in products | filter:byCategory">
+                    <div class="item">
+                        <img ng-src="{{ product.imageLink }}" alt="" />
+                        <div class="detail">
+                            <h4>{{ product.title }}</h4>
+                            <p>{{ product.subtitle }}</p>
+                            <div class="category">{{ product.categoryGroup }}</div>
+                            <small class="description">{{ product.description }}</small>
+                            <div class="price"> {{ product.price }}</div>
+                            <!-- ng-model="selected[id]" -->
+                            <a ng-href="#!/store/{{ product._id }}" ng-click="showProduct(product._id)" class="btn btn-default gold" >Edit</a>
+                            <a ng-href="" ng-click="removeProduct(product._id)" class="btn btn-default gold" >Remove</a>
+                        </div>
                     </div>
                 </div>
             </div>
