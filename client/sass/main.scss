@@ -188,7 +188,7 @@ a:hover {
 nav.h_menu {
 	background-color: rgba(0,0,0,.6);
 	padding: $gutter / 2;
-	overflow: hidden;
+	//overflow: hidden;
 
 	.navbar-brand {
 		height: auto;
@@ -218,11 +218,26 @@ nav.h_menu {
 			}
 		}
 	}
+	.navbar-collapse {
+		padding-right: 15px;
+	    padding-left: 15px;
+	    overflow-x: visible;
+	    -webkit-overflow-scrolling: touch;
+	    border-top: none;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+	    background-color: #090a08;
+	    z-index: 0;
+	    margin-top: -314px;
+	}
 	&.sticky {
 		position: fixed;
 		top: 0;
 		z-index: 10;
 		width: 100%;
+		.navbar-collapse {
+		    margin-top: 0;
+		}
 	}
 	.logOut {
 		p {
@@ -784,8 +799,14 @@ nav.h_menu {
 	.navbar-collapse.collapse {
 		background-color: transparent;
 	}
-	nav.h_menu ul li {
-	    display: inline-block;
+	nav.h_menu {
+		.navbar-collapse {
+			margin-top: 0;
+		
+			ul li {
+		    	display: inline-block;
+			}
+		}
 	}
 	section {
 	    padding: $gutter * 4 $gutter * 2;
